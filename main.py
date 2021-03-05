@@ -60,9 +60,9 @@ def send_at(command, back, timeout):
 def parse_gps_data(data):
     parts = data.split(',')
     return {
-        'timestamp': int(parts[2])
-        'latitude': float(parts[4])
-        'longitude': float(parts[5])
+        'timestamp': int(parts[2]),
+        'latitude': float(parts[4]),
+        'longitude': float(parts[5]),
     }
 
 
@@ -78,7 +78,6 @@ def get_gps_position():
 
     print('Get IMEI...')
     rec_buff = ''
-    send_at(,'OK', 1)
     answer = send_at('AT+GSN', 'OK', 1)
     if not answer:
         return False
